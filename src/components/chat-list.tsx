@@ -13,13 +13,13 @@ export default function ChatList({ users }: { users: ChatItem[] }) {
     <div
       className={`flex ${
         hide && "hidden"
-      } flex-col max-w-[400px] w-full md:border-r lg:flex`}
+      } flex-col lg:w-[500px] w-full md:border-r lg:flex md:p-3 md:gap-1`}
     >
       {users.map((item) => {
         return (
           <Link
             href={`/chat/${item.username}`}
-            className="hover:bg-slate-100 transition-all p-3 flex gap-3 items-center border-b"
+            className="hover:bg-slate-100 md:border-none md:rounded-lg transition-all p-3 flex gap-3 items-center border-b"
             key={item.lastMessage}
           >
             <div className="relative">

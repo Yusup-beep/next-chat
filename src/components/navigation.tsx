@@ -11,9 +11,14 @@ const navItems = [
 
 export default function Navigation() {
   const pathname = usePathname();
+  const hide = pathname.startsWith("/chat");
 
   return (
-    <div className="bg-white/85 border-t flex justify-between items-center fixed bottom-0 right-0 left-0 p-3 z-10 md:static md:flex-col md:justify-normal md:gap-5 md:border-r transition-all">
+    <div
+      className={`bg-white ${
+        hide && "hidden md:flex"
+      } border-t flex justify-between items-center fixed bottom-0 right-0 left-0 p-3 z-10 md:static md:flex-col md:justify-normal md:gap-5 md:border-r transition-all`}
+    >
       {navItems.map((item) => {
         return (
           <Link
